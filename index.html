@@ -132,6 +132,10 @@ body {
   font-size: 0.95rem;
 }
 
+.details-grid .row {
+  gap: 12px;
+}
+
 .row {
   display: flex;
   align-items: flex-start;
@@ -195,44 +199,161 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 16px;
+    padding: 10px;
   }
 
   .page {
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 28px 24px;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 20px;
   }
 
   .photo-frame {
-    width: 120px;
-    height: 146px;
+    width: 86px;
+    min-width: 86px;
+    height: 102px;
+    padding: 4px;
+    border-radius: 16px;
   }
 
   .content {
-    padding: 24px 18px 28px;
+    gap: 14px;
+    padding: 16px 12px 18px;
   }
 
   .section {
-    padding: 18px;
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+
+  .name {
+    font-size: 1.08rem;
+  }
+
+  .subtitle {
+    margin-top: 4px;
+    font-size: 0.62rem;
+  }
+
+  .section-title {
+    margin-bottom: 8px;
+    font-size: 0.78rem;
   }
 
   .grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 10px;
+    font-size: 0.69rem;
+  }
+
+  .details-grid .row {
+    gap: 8px;
   }
 
   .row {
-    flex-direction: column;
-    gap: 2px;
+    flex-direction: row;
+    gap: 3px;
   }
 
   .label {
-    min-width: 0;
+    min-width: 64px;
+    font-size: 0.68rem;
+  }
+
+  .value,
+  .education-text,
+  .family-text,
+  .career-note,
+  .list,
+  .contact-item,
+  .contact-item span,
+  .contact-item strong {
+    font-size: 0.69rem;
+    line-height: 1.5;
+  }
+
+  .list {
+    padding-left: 16px;
+    line-height: 1.5;
+  }
+
+  .career-note {
+    margin-top: 8px;
+  }
+
+  .contact {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .contact-item {
+    flex: 1 1 0;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    gap: 12px;
+    padding: 16px 16px;
+  }
+
+  .name {
+    font-size: 0.96rem;
+  }
+
+  .subtitle {
+    font-size: 0.58rem;
+  }
+
+  .photo-frame {
+    width: 74px;
+    min-width: 74px;
+    height: 88px;
+  }
+
+  .content {
+    gap: 12px;
+    padding: 14px 10px 16px;
+  }
+
+  .section {
+    padding: 12px 10px;
+  }
+
+  .grid {
+    gap: 7px 8px;
+    font-size: 0.64rem;
+  }
+
+  .label {
+    min-width: 58px;
+    font-size: 0.62rem;
+  }
+
+  .value,
+  .education-text,
+  .family-text,
+  .career-note,
+  .list,
+  .contact-item,
+  .contact-item span,
+  .contact-item strong {
+    font-size: 0.64rem;
+  }
+
+  .contact {
+    gap: 6px;
+  }
+
+  .contact-item {
+    padding: 8px;
   }
 }
 
@@ -268,7 +389,6 @@ body {
     <header class="header">
       <div>
         <div class="name">Vishal I R</div>
-        <div class="subtitle">Matrimonial Profile</div>
       </div>
       <div>
         <div class="photo-frame">
@@ -280,23 +400,21 @@ body {
     <main class="content">
       <section class="section">
         <div class="section-title">Personal Information</div>
-        <div class="grid">
+        <div class="grid details-grid">
           <div class="row"><div class="label">Date of Birth</div><div class="value">24 July 2000</div></div>
           <div class="row"><div class="label">Age</div><div class="value">25 Years</div></div>
-          <div class="row"><div class="label">Height</div><div class="value">5'9&quot;</div></div>
-          <div class="row"><div class="label">Weight</div><div class="value">70 kg</div></div>
           <div class="row"><div class="label">Religion</div><div class="value">Hindu</div></div>
-          <div class="row"><div class="label">Caste</div><div class="value">Raju</div></div>
+          <div class="row"><div class="label">Caste</div><div class="value">Rajus</div></div>
           <div class="row"><div class="label">Mother Tongue</div><div class="value">Telugu</div></div>
           <div class="row"><div class="label">Marital Status</div><div class="value">Single</div></div>
-          <div class="row"><div class="label">Current Location</div><div class="value">Chennai, Tamil Nadu</div></div>
+          <div class="row"><div class="label">Current Location</div><div class="value">Chennai</div></div>
           <div class="row"><div class="label">Native Place</div><div class="value">Rajapalayam</div></div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-title">Horoscope Details</div>
-        <div class="grid">
+        <div class="grid details-grid">
           <div class="row"><div class="label">Rasi</div><div class="value">Mesham</div></div>
           <div class="row"><div class="label">Nakshatra</div><div class="value">Bharani</div></div>
           <div class="row"><div class="label">Place of Birth</div><div class="value">Rajapalayam</div></div>
@@ -317,7 +435,6 @@ body {
           <li>Worked at <strong>HCL Technologies</strong> as a <strong>Data Analyst</strong> for 3 years.</li>
           <li>Currently <strong>Co-Founder – ZAi-Fi Business Solutions</strong>.</li>
           <li>Managing the company’s <strong>technology division</strong>.</li>
-          <li>Built multiple <strong>applications and Generative AI solutions</strong>.</li>
         </ul>
         <div class="career-note">Total Experience: ~4 Years</div>
       </section>
